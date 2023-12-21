@@ -20,14 +20,16 @@ sed -i "${1}.spec" -r -e "s/^Version:.+$/Version: ${2}/g"
 
 info 'Committing changes'
 git add "${1}.spec"
-git commit -m "Update ${1} to version ${2}"
 
-info 'Pushing changes'
+if git commit -m "Update ${1} to version ${2}"
+then
+    info 'Pushing changes'
 
-for _ in {1..3}
-do
-    git push origin main && break
-done
+    for _ in {1..3}
+    do
+        git push origin main && break
+    done
+fi
 
 info 'Notifying Copr'
-curl -X POST "${3}"
+curl -X POST "${3}/${1}"
