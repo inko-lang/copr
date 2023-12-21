@@ -30,4 +30,4 @@ do
 done
 
 info 'Notifying Copr'
-curl -X "${3}"
+curl -X POST "${3}"
