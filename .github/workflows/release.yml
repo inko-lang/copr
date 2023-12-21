@@ -1,0 +1,22 @@
+---
+name: Release
+run-name: |
+  Release ${{ inputs.name }} v${{ inputs.version }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'The name of the package to release'
+        required: true
+      version:
+        description: 'The version to release'
+        required: true
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Updating
+        run: bash scripts/update.sh "${{ inputs.name }}" "${{ inputs.version }}" "${{ secrets.WEBHOOK_URL }}"
