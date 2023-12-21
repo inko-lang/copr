@@ -18,5 +18,6 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Updating
         run: bash scripts/update.sh "${{ inputs.name }}" "${{ inputs.version }}" "${{ secrets.WEBHOOK_URL }}"
