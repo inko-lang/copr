@@ -2,7 +2,7 @@
 
 Name:    inko
 Version: 0.14.0
-Release: 2
+Release: 3
 Summary: A language for building concurrent software with confidence
 License: MPL-2.0
 URL:     https://github.com/inko-lang/inko
@@ -35,7 +35,7 @@ unpredictable performance, unexpected runtime errors, or race conditions.
 %autosetup -n %{name}-%{version_no_tilde} -p0
 
 %build
-RUNTIME_STD=%{_libdir}/%{name}/std RUNTIME_RT=%{_libdir}/%{name}/runtime cargo build --release
+INKO_STD=%{_libdir}/%{name}/std INKO_RT=%{_libdir}/%{name}/runtime cargo build --release
 
 %install
 mkdir -p %{buildroot}/%{_libdir}/%{name}/std
