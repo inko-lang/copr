@@ -34,7 +34,7 @@ unpredictable performance, unexpected runtime errors, or race conditions.
 %autosetup -n %{name}-%{version_no_tilde} -p0
 
 %build
-make build INKO_STD=%{_libdir}/%{name}/std INKO_RT=%{_libdir}/%{name}/runtime
+make build RUNTIME_STD=%{_libdir}/%{name}/std RUNTIME_RT=%{_libdir}/%{name}/runtime
 
 %install
 make install DESTDIR=%{buildroot} INSTALL_STD=%{buildroot}/%{_libdir}/%{name}/std INSTALL_RT=%{buildroot}/%{_libdir}/%{name}/runtime/libinko.a
