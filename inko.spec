@@ -28,16 +28,16 @@ unpredictable performance, unexpected runtime errors, or race conditions.
 %files -n %{name}
 %{_bindir}/inko
 %{_datadir}/*
-%{_prefix}/lib/%{name}/*
+%{_libdir}/%{name}/*
 
 %prep
 %autosetup -n %{name}-%{version_no_tilde} -p0
 
 %build
-make build
+make build INKO_STD=%{_libdir}/%{name}/std INKO_RT=%{_libdir}/%{name}/runtime
 
 %install
-make install DESTDIR=%{buildroot}
+make install DESTDIR=%{buildroot} INSTALL_STD=%{buildroot}/%{_libdir}/%{name}/std INSTALL_RT=%{buildroot}/%{_libdir}/%{name}/runtime/libinko.a
 
 %changelog
 %autochangelog
