@@ -35,7 +35,7 @@ unpredictable performance, unexpected runtime errors, or race conditions.
 %autosetup -n %{name}-%{version_no_tilde} -p0
 
 %build
-RUNTIME_STD=%{_libdir}/%{name}/std RUNTIME_RT=%{_libdir}/%{name}/runtime %{cargo_build}
+RUNTIME_STD=%{_libdir}/%{name}/std RUNTIME_RT=%{_libdir}/%{name}/runtime cargo build --release
 
 %install
 mkdir -p %{buildroot}/%{_libdir}/%{name}/std
