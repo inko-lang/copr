@@ -15,6 +15,7 @@ then
     git config --global --add safe.directory '*'
 fi
 
+cd "${1}"
 info 'Updating RPM spec'
 sed -i "${1}.spec" -r -e "s/^Version:.+$/Version: ${2}/g"
 
