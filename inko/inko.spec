@@ -1,5 +1,9 @@
 %global debug_package %{nil}
 
+%if 0%{?fedora} >= 40
+%define llvm_version 17
+%endif
+
 Name:    inko
 Version: 0.15.0
 Release: 1%{?dist}
@@ -8,7 +12,9 @@ License: MPL-2.0
 URL:     https://github.com/inko-lang/inko
 Source:  https://github.com/inko-lang/inko/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires: llvm16 llvm16-devel llvm16-static
+BuildRequires: llvm%{?llvm_version}
+BuildRequires: llvm%{?llvm_version}-devel
+BuildRequires: llvm%{?llvm_version}-static
 BuildRequires: rust >= 1.70.0
 BuildRequires: cargo >= 1.70.0
 BuildRequires: gcc make
