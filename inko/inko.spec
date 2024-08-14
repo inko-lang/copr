@@ -15,8 +15,8 @@ Source:  https://github.com/inko-lang/inko/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: llvm%{?llvm_version}
 BuildRequires: llvm%{?llvm_version}-devel
 BuildRequires: llvm%{?llvm_version}-static
-BuildRequires: rust >= 1.70.0
-BuildRequires: cargo >= 1.70.0
+BuildRequires: rust
+BuildRequires: cargo
 BuildRequires: gcc make
 BuildRequires: libstdc++-devel libstdc++-static libffi-devel zlib-devel git
 Requires:      libgcc gcc git
