@@ -6,7 +6,7 @@
 
 Name:    ivm
 Version: 0.4.1
-Release: 5%{?dist}
+Release: 1%{?dist}
 Summary: The cross-platform Inko version manager
 License: MPL-2.0
 URL:     https://github.com/inko-lang/ivm
