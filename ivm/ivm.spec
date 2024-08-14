@@ -1,27 +1,24 @@
 %global debug_package %{nil}
 
-%if 0%{?fedora} >= 39
-%define llvm_version 16
+%if 0%{?fedora} >= 40
+%define llvm_version 17
 %endif
 
 Name:    ivm
 Version: 0.4.1
-Release: 3%{?dist}
+Release: 5%{?dist}
 Summary: The cross-platform Inko version manager
 License: MPL-2.0
 URL:     https://github.com/inko-lang/ivm
 Source:  https://github.com/inko-lang/ivm/archive/refs/tags/v%{version}.tar.gz
 
-Requires: llvm%{?llvm_version}
-Requires: llvm%{?llvm_version}-devel
-Requires: llvm%{?llvm_version}-static
-Requires: rust >= 1.68.0
-Requires: cargo >= 1.68.0
-Requires: libstdc++-devel libstdc++-static libffi-devel zlib-devel
+Recommends: llvm%{?llvm_version}
+Recommends: llvm%{?llvm_version}-devel
+Recommends: llvm%{?llvm_version}-static
+Recommends: libstdc++-devel libstdc++-static libffi-devel zlib-devel
 
-BuildRequires: rust >= 1.68.0
-BuildRequires: cargo >= 1.68.0
-BuildRequires: make
+Requires:      rust cargo
+BuildRequires: rust cargo make
 
 %description
 ivm is a version manager for Inko, and makes it easy to install Inko on
