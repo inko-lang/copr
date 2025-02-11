@@ -5,7 +5,7 @@
 %endif
 
 Name:    inko
-Version: 0.17.1
+Version: 0.18.0
 Release: 1%{?dist}
 Summary: A language for building concurrent software with confidence
 License: MPL-2.0
