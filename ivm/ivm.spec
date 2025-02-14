@@ -5,7 +5,7 @@
 %endif
 
 Name:    ivm
-Version: 0.5.0
+Version: 0.6.0
 Release: 1%{?dist}
 Summary: The cross-platform Inko version manager
 License: MPL-2.0
