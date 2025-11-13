@@ -15,6 +15,7 @@ BuildRequires: rust
 BuildRequires: cargo
 BuildRequires: gcc make
 BuildRequires: libstdc++-devel libstdc++-static libffi-devel zlib-devel git
+BuildRequires: libxml2-devel
 Requires:      libgcc gcc git
 
 %description
