@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    inko
-Version: 0.19.0
+Version: 0.19.1
 Release: 1%{?dist}
 Summary: A language for building concurrent software with confidence
 License: MPL-2.0
