@@ -20,6 +20,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Updating
         run: bash scripts/update.sh "${{ inputs.name }}" "${{ inputs.version }}" "${{ secrets.WEBHOOK_URL }}"
