@@ -9,17 +9,17 @@ on:
       name:
         description: 'The name of the package to release'
         required: true
+        type: string
       version:
         description: 'The version to release'
         required: true
+        type: string
 
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    runs-on: home-linux-amd64
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Updating
         run: bash scripts/update.sh "${{ inputs.name }}" "${{ inputs.version }}" "${{ secrets.WEBHOOK_URL }}"
